@@ -1,5 +1,3 @@
-./models/state.py
 ./models/user.py
 ./models/place.py
 ./models/city.py
-
