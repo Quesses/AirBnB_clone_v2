@@ -5,15 +5,17 @@ from models.amenity import Amenity
 
 
 class test_Amenity(test_basemodel):
-    """ """
+    """ Amenity test class"""
 
     def __init__(self, *args, **kwargs):
-        """ """
+        """ Intantialize the test class"""
         super().__init__(*args, **kwargs)
         self.name = "Amenity"
         self.value = Amenity
 
     def test_name2(self):
-        """ """
+        """ testing name type"""
         new = self.value()
-        self.assertEqual(type(new.name), str)
+        self.assertEqual(type(new.name), str if
+                         os.getenv('HBNB_TYPE_STORAGE') != 'db' else
+                         type(None))
